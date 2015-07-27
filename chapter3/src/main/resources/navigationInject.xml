@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="navigationC" class="com.jason.spring.nav.NavigationC"/>
+
+    <bean id="navigationB" class="com.jason.spring.nav.NavigationB">
+        <property name="list">
+            <list></list>
+        </property>
+        <property name="map">
+            <map></map>
+        </property>
+        <property name="properties">
+            <props></props>
+        </property>
+    </bean>
+
+    <bean id="navigationA" class="com.jason.spring.nav.NavigationA">
+        <property name="navigationB" ref="navigationB"/>
+        <property name="navigationB.navigationC" ref="navigationC"/>
+        <property name="navigationB.list[0]" ref="navigationC"/>
+        <property name="navigationB.map[key]" ref="navigationC"/>
+        <property name="navigationB.properties[0]" ref="navigationC"/>
+        <property name="navigationB.properties[1]" ref="navigationC"/>
+        <property name="navigationB.array[0]" ref="navigationC"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="byIndex" class="com.jason.spring.bean.HelloImpl3">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="Hello World! byIndex"/>
+    </bean>
+
+    <bean id="byType" class="com.jason.spring.bean.HelloImpl3">
+        <constructor-arg type="int" value="2"/>
+        <constructor-arg type="java.lang.String" value="Hello World! byType"/>
+    </bean>
+
+    <bean id="byName" class="com.jason.spring.bean.HelloImpl3">
+        <constructor-arg name="index" value="3"/>
+        <constructor-arg name="message" value="Hello World! byName"/>
+    </bean>
+
+    <bean id="byFactory" class="com.jason.spring.factory.DependencyInjectByStaticFactory" factory-method="newInstance">
+        <constructor-arg name="index" value="4"/>
+        <constructor-arg name="message" value="Hello World! byFactory"/>
+    </bean>
+
+    <bean id="hello4" class="com.jason.spring.bean.HelloImpl4">
+        <property name="names">
+            <list>
+                <value>jason</value>
+                <value>alpha</value>
+                <value>tom</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="collection" class="com.jason.spring.bean.HelloCollection">
+        <property name="beanName">
+            <idref bean="hello4"/>
+            <!-- idref 时property的类型必须是String,其引用的是对象的id而非对象 -->
+        </property>
+    </bean>
+
+    <bean id="bean1" class="java.lang.String">
+        <constructor-arg index="0" value="test bean1"/>
+    </bean>
+    <bean id="bean2" class="java.lang.String">
+        <constructor-arg index="0" value="test bean2"/>
+    </bean>
+</beans>
