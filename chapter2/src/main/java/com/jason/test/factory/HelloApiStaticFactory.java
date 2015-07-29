@@ -4,7 +4,7 @@ import com.jason.test.HelloApi;
 import com.jason.test.impl.HelloImpl2;
 
 public class HelloApiStaticFactory {
-	public static HelloApi newInstance(String message){
-		return new HelloImpl2(message);
-	}
+  public static HelloApi newInstance(String message) {
+    return new HelloImpl2(message);
+  }
 }

@@ -1,20 +1,20 @@
 package com.jason.spring.bean.cir;
 
 public class CircleB {
-	private CircleC circleC;
+  private CircleC circleC;
 
-	public void setCircleC(CircleC circleC) {
-		this.circleC = circleC;
-	}
+  public CircleB(CircleC circleC) {
+    this.circleC = circleC;
+  }
 
-	public CircleB(CircleC circleC) {
-		this.circleC = circleC;
-	}
+  public CircleB() {
+  }
 
-	public CircleB() {
-	}
+  public void setCircleC(CircleC circleC) {
+    this.circleC = circleC;
+  }
 
-	public void b() {
-		circleC.c();
-	}
+  public void b() {
+    circleC.c();
+  }
 }

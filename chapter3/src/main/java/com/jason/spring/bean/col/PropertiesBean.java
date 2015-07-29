@@ -3,9 +3,9 @@ package com.jason.spring.bean.col;
 import java.util.Properties;
 
 public class PropertiesBean {
-	private Properties values;
+  private Properties values;
 
-	public void setValues(Properties values) {
-		this.values = values;
-	}
+  public void setValues(Properties values) {
+    this.values = values;
+  }
 }

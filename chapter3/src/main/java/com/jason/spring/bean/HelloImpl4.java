@@ -6,16 +6,16 @@ import java.util.List;
 
 public class HelloImpl4 implements HelloApi {
 
-	private List<String> names;
+  private List<String> names;
 
-	@Override
-	public void sayHello() {
-		for (String name : names) {
-			System.out.println("Hello " + name);
-		}
-	}
+  @Override
+  public void sayHello() {
+    for (String name : names) {
+      System.out.println("Hello " + name);
+    }
+  }
 
-	public void setNames(List<String> names) {
-		this.names = names;
-	}
+  public void setNames(List<String> names) {
+    this.names = names;
+  }
 }
